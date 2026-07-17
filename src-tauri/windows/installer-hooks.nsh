@@ -1,0 +1,3 @@
+!macro NSIS_HOOK_POSTINSTALL
+  CreateShortcut "$DESKTOP\${PRODUCTNAME}.lnk" "$INSTDIR\${MAINBINARYNAME}.exe"
+!macroend

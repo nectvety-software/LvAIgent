@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+web/node_modules/
+
+# Build output
+dist/
+web/dist/
+
+# Rust
+src-tauri/target/
+src-tauri/gen/
+
+# Binary
+mimo.exe
+
+# Python
+__pycache__/
+*.pyc
+requirements.txt
+bridge.py
+
+# IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Lock files (keep package-lock)
+tsconfig.tsbuildinfo
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Desktop scripts (not for web)
+create-assets.js
+render-guide.md
+RENDER-README.md
+render-video.js
+render.bat
+setup-assets.bat
+tiktok-script.md

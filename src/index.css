@@ -1,0 +1,326 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #111122;
+    --bg-elev: #121225;
+    --bg-elev-2: #1c1c34;
+    --border: #25253e;
+    --border-strong: #343451;
+    --text: #d8dbe7;
+    --text-dim: #9ca2bb;
+    --text-faint: #5d637d;
+    --accent: #ff8a00;
+    --accent-soft: rgba(255, 138, 0, 0.12);
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI Variable", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto,
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* UAGet-inspired application shell */
+.uaget-app { background: #111122; }
+.uaget-titlebar { background: #151527; border-color: #24243d; }
+.uaget-titlebar-actions { width: 428px; min-width: 428px; }
+.uaget-activity { background: #111124; border-right: 1px solid #24243d; }
+.uaget-activity-button.text-mimoorange { background: rgba(255, 138, 0, 0.1); }
+.uaget-sidebar { background: #121225; border-right: 1px solid #25253e; }
+.uaget-sidebar-toggle { transform: translateY(10px); position: relative; z-index: 1; }
+.uaget-new-chat { color: #bdc1d1; background: #1c1c34; border: 1px solid #2c2c48; }
+.uaget-new-chat:hover { color: #f1f2f7; background: #23233c; border-color: #424262; }
+.uaget-chat, .uaget-message-canvas { background: #19192e; }
+.uaget-chat-header { background: #18182d; border-color: #292941; }
+.uaget-file-tabs { background: #151527; border-color: #292941; }
+.uaget-top-tab { color: #757b96; }
+.uaget-top-tab:hover { color: #c9ccda; background: #202039; }
+.uaget-top-tab.active { color: #f4f5f9; background: #1c2a3b; }
+.uaget-welcome-title { letter-spacing: -0.7px; }
+.uaget-suggestion { color: #9297ad; background: #202039; border: 1px solid #30304c; }
+.uaget-suggestion:hover { color: #ffad4a; border-color: rgba(255, 138, 0, 0.55); background: rgba(255, 138, 0, 0.08); }
+.uaget-composer-zone { background: #19192e; border-color: #292941; }
+.uaget-input-bar { background: #272743; border-color: #343451; box-shadow: none; }
+.uaget-input-bar:focus-within { border-color: #565675; box-shadow: 0 0 0 1px rgba(255, 138, 0, 0.12); }
+.uaget-mode-switch { background: #1f1f36; border-color: #343451; }
+.uaget-send.btn-accent { color: #25293a; background: #f0f2f8; border: 1px solid #fff; box-shadow: none; }
+.uaget-send.btn-accent:hover { background: #fff; }
+.uaget-right-panel { background: #19192e; border-color: #292941; }
+.uaget-user-message { background: rgba(255, 138, 0, 0.16); border: 1px solid rgba(255, 160, 56, 0.44); box-shadow: none; }
+.uaget-assistant-message { background: transparent; border-color: transparent; }
+.lvaigent-assistant-document { color: #d9dce7; }
+.lvaigent-response-markdown { color: #d9dce7; font-size: 14px; line-height: 1.75; }
+.lvaigent-response-markdown > :first-child { margin-top: 0; }
+.lvaigent-response-markdown > :last-child { margin-bottom: 0; }
+.lvaigent-response-markdown h1,
+.lvaigent-response-markdown h2,
+.lvaigent-response-markdown h3,
+.lvaigent-response-markdown h4 { color: #f3f4f8; letter-spacing: -0.015em; }
+.lvaigent-response-markdown h1 { font-size: 22px; margin: 1.4em 0 0.65em; }
+.lvaigent-response-markdown h2 { font-size: 18px; margin: 1.35em 0 0.6em; }
+.lvaigent-response-markdown h3 { font-size: 15px; margin: 1.2em 0 0.5em; }
+.lvaigent-response-markdown p { margin: 0.8em 0; }
+.lvaigent-response-markdown ul,
+.lvaigent-response-markdown ol { margin: 0.8em 0; padding-left: 1.4rem; }
+.lvaigent-response-markdown li { margin: 0.28em 0; padding-left: 0.18rem; }
+.lvaigent-response-markdown li::marker { color: #9299af; }
+.lvaigent-response-markdown a { color: #5da9ff; text-decoration: none; }
+.lvaigent-response-markdown a:hover { color: #83beff; text-decoration: underline; }
+.lvaigent-response-markdown strong { color: #f0f2f7; font-weight: 650; }
+.lvaigent-response-markdown code:not(pre code) {
+  color: #ffad4a;
+  background: #24243b;
+  border: 1px solid #34344d;
+  border-radius: 5px;
+  padding: 0.12em 0.34em;
+  font-size: 0.88em;
+}
+.lvaigent-response-markdown blockquote {
+  color: #aeb4c7;
+  border-left-color: #555d78;
+  background: rgba(32, 32, 57, 0.6);
+  border-radius: 0 8px 8px 0;
+  padding: 0.25rem 1rem;
+}
+.lvaigent-response-markdown hr { border-color: #303047; margin: 1.5rem 0; }
+.lvaigent-response-markdown table {
+  width: 100%; margin: 1rem 0; border-collapse: separate; border-spacing: 0;
+  overflow: hidden; border: 1px solid #34364b; border-radius: 12px;
+  background: #11121c; font-size: 12px;
+}
+.lvaigent-response-markdown th,
+.lvaigent-response-markdown td { border-right: 1px solid #303246; border-bottom: 1px solid #303246; padding: 10px 12px; text-align: left; }
+.lvaigent-response-markdown th { background: #1b1c2a; color: #f0f1f6; font-weight: 650; }
+.lvaigent-response-markdown td { color: #c9cdda; }
+.lvaigent-response-markdown tr:last-child td { border-bottom: 0; }
+.lvaigent-response-markdown th:last-child,
+.lvaigent-response-markdown td:last-child { border-right: 0; }
+.lvaigent-task-card { background: #202034; border-color: #32324a; box-shadow: 0 12px 30px rgba(6, 6, 17, 0.14); }
+.lvaigent-change-card { background: #202034; border-color: #32324a; box-shadow: 0 12px 30px rgba(6, 6, 17, 0.14); }
+
+@media (max-width: 1350px) {
+  .uaget-sidebar { width: 260px !important; min-width: 260px !important; }
+  .uaget-right-panel { width: 300px; min-width: 280px; }
+}
+
+@media (min-width: 1351px) and (max-width: 1700px) {
+  /* Windows 125% display scaling uses a ~1536px CSS viewport on a 1920px screen.
+     These logical sizes reproduce the 80 / 382 / fluid / 428px reference grid. */
+  .uaget-titlebar { height: 39px !important; min-height: 39px !important; }
+  .uaget-titlebar-brand { padding-left: 24px !important; padding-right: 24px !important; }
+  .uaget-titlebar-brand > span { font-size: 19px !important; }
+  .uaget-titlebar-actions { width: 342px; min-width: 342px; }
+
+  .uaget-activity {
+    width: 64px !important;
+    min-width: 64px !important;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+    gap: 10px !important;
+  }
+  .uaget-activity-button { width: 38px !important; height: 38px !important; }
+
+  .uaget-sidebar { width: 306px !important; min-width: 306px !important; }
+  .uaget-sidebar-toolbar { height: 39px !important; min-height: 39px !important; }
+
+  .uaget-chat-header,
+  .uaget-file-tabs { height: 61px !important; min-height: 61px !important; }
+
+  .uaget-right-panel {
+    width: 342px !important;
+    min-width: 342px !important;
+    max-width: 342px !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .uaget-sidebar { width: 230px !important; min-width: 230px !important; }
+  .uaget-right-panel { display: none; }
+  .uaget-welcome-title { font-size: 30px; }
+}
+
+/* Keep the responsive fixed widths from overriding the collapsed state. */
+.uaget-sidebar[data-open="false"] {
+  width: 0 !important;
+  min-width: 0 !important;
+  border-right-width: 0;
+}
+
+/* ============================================================
+   SCROLLBARS
+   ============================================================ */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(154, 164, 178, 0.25) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(154, 164, 178, 0.22);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 103, 0, 0.45);
+  background-clip: content-box;
+}
+
+.sidebar-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.modal-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Hidden scrollbar - keeps scroll functionality but hides the scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ============================================================
+   COMPONENT PRIMITIVES
+   ============================================================ */
+@layer components {
+  .glass {
+    background: rgba(16, 19, 25, 0.8);
+    backdrop-filter: blur(12px);
+  }
+
+  .btn-accent {
+    @apply bg-mimoorange text-white font-medium rounded-lg transition-all;
+    box-shadow: 0 2px 12px -2px rgba(255, 103, 0, 0.4);
+  }
+  .btn-accent:hover {
+    @apply bg-mimoorange-600;
+  }
+  .btn-accent:active {
+    transform: translateY(1px);
+  }
+
+  .nav-item {
+    @apply flex items-center gap-2 px-3 py-2 rounded-lg text-sm cursor-pointer transition-colors;
+    color: var(--text-dim);
+  }
+  .nav-item:hover {
+    background: var(--bg-elev-2);
+    color: var(--text);
+  }
+  .nav-item.active {
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .panel {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-full border transition-colors;
+    background: var(--bg-elev-2);
+    border-color: var(--border);
+    color: var(--text-dim);
+  }
+}
+
+/* Animations */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.animate-scale-in {
+  animation: scale-in 0.15s ease-out;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+.animate-pulse-dot {
+  animation: pulse-dot 1.6s ease-in-out infinite;
+}
+
+/* Gradient avatar / logo mark */
+.logo-mark {
+  background: linear-gradient(135deg, #cfd6e4 0%, #8b94a6 48%, #ff6700 52%, #ff8a3d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom title bar drag region */
+.titlebar-drag {
+  -webkit-app-region: drag;
+  app-region: drag;
+}
+.titlebar-drag > button,
+.titlebar-drag > [data-tauri-no-drag] {
+  -webkit-app-region: no-drag;
+  app-region: no-drag;
+}
